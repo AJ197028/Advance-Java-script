@@ -1,0 +1,26 @@
+<html>
+    <script>
+       
+        this.table = 'window table';
+        //console.log(window.table);                  //window table
+        
+       
+        
+        this.garage = {
+            table : 'garage table',
+            cleanTable(){
+                console.log(`cleaning ${this.table}`)
+            }
+        };
+
+        let johnsRoom = {
+            table : 'johns table',
+            cleanTable(){
+                console.log(`cleaning ${this.table}`)  
+            }
+        };
+
+        johnsRoom.cleanTable();     //cleaning johns table
+        this.garage.cleanTable();   //cleaning garage table
+    </script>
+</html>

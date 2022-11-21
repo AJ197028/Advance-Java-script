@@ -1,0 +1,42 @@
+<html>
+    <script>        
+        let me = {
+            name: "Jasmin",
+            age: 26,
+            thisInArrow:()=>{
+                console.log("my name is "+this.name);       
+            },
+            printDetail(){
+                //REGULAR FUNCTION
+                // function findName(){
+                //     console.log("my name is "+this.name);        //undefined
+                // }
+                // function printAge(){
+                //     console.log("my age is "+this.age);          //undefined
+                // }
+
+                //ARROW FUNCTION
+                const findName =() => {
+                    console.log("my name is "+this.name);           //jasmin
+                }
+                const printAge = () => {
+                    console.log("my age is "+this.age);                //26
+                }
+
+                findName();
+                printAge();
+            }
+        }
+
+        me.thisInArrow();   //undefined
+        me.printDetail();   //by regular function undefined,undefined // by arrow jasmin 26
+
+        //using this in regular functin it will find in same scope while using arrow function
+        //it will search in parent scope
+        
+        
+
+
+
+    </script>
+</html> 

@@ -1,0 +1,67 @@
+<html>
+    <script>        
+
+        class Student {
+            
+            static count=0;         //static is like commonn variable to all object
+        
+            constructor(name,age,phoneNumber,mark){
+                this.name =`${name}`,
+                this.age =`${age}`,
+                this.phoneNumber =`${phoneNumber}`,
+                this.mark =`${mark}`,
+                Student.count += 1
+            }
+            
+            studentEligibility(){
+                if(this.mark > 40){
+                    console.log(`${this.name} is eligible `); 
+                }
+                else{
+                    console.log(`${this.name} is not eligible `);
+                }
+            
+            }
+
+            setPlacementAge(minPlacementAge){
+                return (minMark)=>{
+                    if(this.mark > minMark && this.age > minPlacementAge){
+                        console.log(`${this.name} is eligible for placement.`);
+                    }
+                    else{
+                        //console.log(this.name +" is not eligible for placement");
+                    }
+                }
+            }
+
+            static displayTotal(){                  
+                console.log(`${Student.count} Students created`);       //5 student created
+            }
+
+        }
+
+        // const jill = new Student('jill',18,'5469874562',42);
+        // const john = new Student('john',25,'8456546523',35);
+        // const Rashmi = new Student('Rashmi',23,7545468856,56);
+        // const Prem  = new Student('Prem',23,99856542485,18);
+        // const Alex = new Student('Rashmi',19,8084562247,48);
+
+        // jill.studentEligibility();      //jill is eligible
+        // john.studentEligibility();      //john is not elilgible
+        // Student.displayTotal();
+
+        // jill.setPlacementAge(20)(45);    //jill is not eligible for placement
+        // john.setPlacementAge(18)(30);    //john is eligible for placement
+
+        var a = [new Student('jill',18,'5469874562',32),
+                new Student('john',25,'8456546523',45),
+                new Student('Rashmi',23,7545468856,56),
+                new Student('Prem',23,99856542485,18), 
+                new Student('Rashmi',19,8084562247,48)
+                ];
+        for(let i=0;i<a.length;i++){
+            a[i].setPlacementAge(20)(40);
+            console.log(a[i][0]); 
+        }
+    </script>
+</html> 

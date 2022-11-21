@@ -1,0 +1,34 @@
+<html>
+    <script>
+       
+        this.table = 'window table';
+        //console.log(window.table);                  //window table
+        
+        //this inside function
+        const cleanTable = (soap)=>{
+          const innerFunction = (_soap)=>{
+            console.log(`cleaning ${this.table} using ${_soap}`);
+          }
+          innerFunction(soap);         //error cannot read property table undefined
+          //innerFunction.call(this,soap); // all 3 op
+          innerFunction.bind(this)(soap); 
+        };
+
+
+        //cleanTable();               //cannot read property table undefined
+
+           
+        this.garage = {
+            table : 'garage table'
+        };
+
+        let johnsRoom = {
+            table : 'johns table'
+        };
+
+        // can access using call function
+        cleanTable.call(this,'some soap');                      //cleaning window table using some soap
+        cleanTable.call(this.garage, 'some soap');              //cleaning garage table using some soap
+        cleanTable.call(johnsRoom, 'some soap');                //cleaning johns table table using some soap
+    </script>
+</html> 

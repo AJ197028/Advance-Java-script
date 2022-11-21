@@ -1,0 +1,45 @@
+<html>
+    <script>        
+
+        class Student {
+            
+            static count=0;         //static is like commonn variable to all object
+
+            //3..constructor to initialize value
+            constructor(name,age,phoneNumber,board_mark){
+                this.name =`${name}`,
+                this.age =`${age}`,
+                this.phoneNumber =`${phoneNumber}`,
+                this.board_mark =`${board_mark}`,
+                Student.count += 1
+                
+                
+            }
+            //4..function of class i.e method
+            studentEligibility(){
+                if(this.board_mark > 40){
+                    console.log(`${this.name} is eligible `); 
+                }
+                else{
+                    console.log(`${this.name} is not eligible `);
+                }
+            
+            }
+            
+            //declare static method
+            static displayTotal(){                  
+                console.log(`${Student.count} Students created`);       //5 student created
+            }
+        }
+
+        const jill = new Student('jill',18,'5469874562',42);
+        const john = new Student('john',15,'8456546523',35);
+        const Rashmi = new Student('Rashmi',23);
+        const Prem  = new Student('Prem',13);
+        const Alex = new Student('Rashmi',19);
+
+        jill.studentEligibility();      //jill is eligible
+        john.studentEligibility();      //john is not elilgible
+        Student.displayTotal();          //5
+    </script>
+</html> 

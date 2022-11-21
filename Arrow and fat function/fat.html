@@ -1,0 +1,55 @@
+<html>
+    <script>        
+        //step 1
+        // var x = function(){
+        //     this.val = 1;
+        //     setTimeout(function(){
+        //         this.val++;
+        //         console.log(this.val)
+        //     }, 1);                      //NaN   doesnt recgnoise outer this
+
+        // };
+        //var xx = new x();
+
+        //step2
+        // var x = function(){
+        //     var that = this;
+        //     this.val = 1;
+        //     setTimeout(function(){
+        //         that.val++;
+        //         console.log(that.val);
+        //     }, 1);                        //2
+
+        // };
+        //var xx = new x();
+
+        //By ARROW Function
+        // var x = function(){
+           
+        //     this.val = 1;
+        //     setTimeout(() => {
+        //         this.val++;
+        //         console.log(this.val);
+        //     }, 1);                             //2
+        // };      
+        // var xx = new x();
+
+        //new example normal function
+        // var x = function(){
+        //     console.log(arguments[0]);      //1
+        // }
+        // x(1,2,3);
+
+        //by Arrow Function
+         
+        var x = (...n) => {
+            //console.log(arguments[0]);      //error
+            console.log(n[3]);                //4
+        }
+        x(1,2,3,4,5);
+
+
+
+
+    </script>
+</html> 
